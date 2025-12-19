@@ -1,0 +1,8 @@
+{
+    // [ Languages ]-----------------------------------
+
+    "file_types": {
+        "JSONC": [".prettierrc"],
+        "Shell Script": ["**/tmux/*.conf"],
+    },
+}

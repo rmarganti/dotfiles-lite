@@ -29,17 +29,12 @@ echo ""
 echo "📂 Processing .config directories..."
 CONFIG_SRC_DIR="$DOTFILES_DIR/.config"
 
-if [ -d "$CONFIG_SRC_DIR" ]; then
-    # Loop through each item in the .config directory
-    for item in "$CONFIG_SRC_DIR"/*; do
-        if [ -d "$item" ]; then
-            folder_name=$(basename "$item")
-            create_symlink "$item" "$HOME/.config/$folder_name"
-        fi
-    done
-else
-    echo "  ⚠️  No .config directory found in $DOTFILES_DIR"
-fi
+for item in "$CONFIG_SRC_DIR"/*; do
+    if [ -d "$item" ]; then
+        folder_name=$(basename "$item")
+        create_symlink "$item" "$HOME/.config/$folder_name"
+    fi
+done
 
 # 2. Symlink .vimrc
 echo ""
